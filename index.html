@@ -16,11 +16,9 @@ body {
 /* INTRO */
 .intro {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,79 +31,60 @@ body {
     color: #8b0000;
     font-size: 22px;
     letter-spacing: 3px;
-    animation: flicker 1.5s infinite;
 }
 
 @keyframes fadeOut {
     to { opacity: 0; visibility: hidden; }
 }
 
-@keyframes flicker {
-    0%,100% {opacity:1;}
-    50% {opacity:0.6;}
-}
-
 /* CONTAINER */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 60px auto;
     padding: 50px;
     background: rgba(15,15,15,0.95);
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(0,0,0,0.9);
-    position: relative;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+    gap: 50px;
+}
+
+.left {
+    flex: 2;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 /* TITRE */
 h1 {
-    text-align: left;
-    margin-right: 320px;
     border-bottom: 1px solid rgba(139,0,0,0.4);
     padding-bottom: 10px;
     letter-spacing: 4px;
 }
 
-/* GLITCH */
-.glitch {
-    position: relative;
-}
-
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    width: 100%;
-    opacity: 0.15;
-}
-
-.glitch::before {
+/* SECTIONS */
+h2 {
     color: #8b0000;
-    animation: glitchTop 3s infinite;
+    border-left: 3px solid #8b0000;
+    padding-left: 10px;
+    margin-top: 30px;
 }
 
-.glitch::after {
-    color: #ff0000;
-    animation: glitchBottom 3s infinite;
-}
-
-@keyframes glitchTop {
-    0% { transform: translate(-2px, -1px); }
-    50% { transform: translate(2px, 1px); }
-    100% { transform: translate(0); }
-}
-
-@keyframes glitchBottom {
-    0% { transform: translate(2px, 1px); }
-    50% { transform: translate(-2px, -1px); }
-    100% { transform: translate(0); }
+p {
+    line-height: 1.8;
 }
 
 /* PROFIL */
 .profile-card {
-    position: absolute;
-    top: 50px;
-    right: 50px;
     width: 260px;
     background: rgba(5,5,5,0.95);
     border: 1px solid #8b0000;
@@ -113,7 +92,6 @@ h1 {
     padding: 15px;
     text-align: center;
     box-shadow: 0 0 20px rgba(139,0,0,0.2);
-    z-index: 2;
 }
 
 .profile-card img {
@@ -126,23 +104,11 @@ h1 {
     color: #8b0000;
 }
 
-.profile-card p {
-    font-size: 13px;
-    color: #bbb;
-}
-
-.profile-desc {
-    font-style: italic;
-    color: #aaa;
-}
-
 /* TAMPON */
 .stamp {
-    margin-top: 20px;
-    margin-left: auto;
-    width: fit-content;
+    margin-top: 25px;
 
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     letter-spacing: 4px;
 
@@ -155,59 +121,27 @@ h1 {
 
     text-transform: uppercase;
 
-    text-align: center;
-
-    /* effet tampon */
-    text-shadow:
-        0 1px 0 rgba(255,255,255,0.05),
-        0 -1px 2px rgba(0,0,0,0.8);
-
     box-shadow:
         inset 0 2px 6px rgba(139,0,0,0.2),
         inset 0 -2px 6px rgba(0,0,0,0.8);
-}
-
-/* TITRES */
-h2 {
-    color: #8b0000;
-    border-left: 3px solid #8b0000;
-    padding-left: 10px;
-}
-
-/* TEXTE */
-p {
-    max-width: 650px;
-    line-height: 1.8;
 }
 
 /* FOOTER */
 .signature {
     margin-top: 120px;
     padding: 30px;
-
     text-align: center;
-    font-size: 15px;
-    letter-spacing: 2px;
-
     color: #8b0000;
 
     border-top: 1px solid rgba(139,0,0,0.4);
 
-    /* GRAVURE RÉELLE */
     text-shadow:
         0 1px 0 rgba(255,255,255,0.15),
         0 -2px 4px rgba(0,0,0,0.9);
 
-    /* PLAQUE EN RELIEF */
     box-shadow:
         inset 0 3px 10px rgba(139,0,0,0.2),
         inset 0 -3px 10px rgba(0,0,0,0.95);
-
-    background: linear-gradient(
-        to bottom,
-        rgba(20,20,20,0.9),
-        rgba(5,5,5,1)
-    );
 }
 </style>
 </head>
@@ -215,26 +149,17 @@ p {
 <body>
 
 <div class="intro">
-    <div class="intro-text">ACCESSING FILE... PLEASE WAIT...</div>
+    <div class="intro-text">ACCESSING FILE...</div>
 </div>
 
 <div class="container">
 
-<div class="profile-card">
-    <img src="selena.png">
-    <h3>Selena Cazares</h3>
-    <p><strong>Naissance :</strong> 11 Novembre 1990</p>
-    <p><strong>Lieu :</strong> Bogotá, Colombie</p>
-    <p><strong>Profession :</strong> Agent SAS</p>
-</div>
+<div class="layout">
 
-<div class="stamp">CONFIDENTIEL</div>
+<div class="left">
 
-<h1 class="glitch" data-text="Dossier — Selena Cazares">
-Dossier — Selena Cazares
-</h1>
+<h1>Dossier — Selena Cazares</h1>
 
-<div class="section">
 <h2>Ses origines</h2>
 <p>
 Née à Bogotá, Selena Cazares grandit au sein d’une famille dont l’influence repose sur une règle simple : ne jamais être exposée. 
@@ -242,27 +167,21 @@ Les Cazares ne cherchent pas la lumière, ils agissent là où les décisions se
 Très tôt, Selena comprend que le pouvoir ne réside pas dans ce qui est visible, mais dans ce qui est maîtrisé. 
 Elle observe, assimile, et apprend à ne jamais réagir sans avoir déjà envisagé toutes les issues possibles.
 </p>
-</div>
 
-<div class="section">
 <h2>Son éducation</h2>
 <p>
 Son éducation est rigoureuse, presque militaire. Pension internationale, formation à la diplomatie, maîtrise de la diction et de l’analyse comportementale. 
 Elle apprend à lire les silences autant que les mots. À anticiper les réactions avant qu’elles ne naissent. 
 Le droit ne devient pas une vocation, il devient un outil. Un cadre qu’elle comprend suffisamment pour ne jamais y être enfermée.
 </p>
-</div>
 
-<div class="section">
 <h2>La construction de son expérience</h2>
 <p>
 Elle refuse de dépendre de son nom. Seule, elle construit son propre cabinet et attire une clientèle exigeante, confrontée à des situations sensibles. 
 Son nom circule sans jamais s’exposer. Elle intervient là où les enjeux dépassent les apparences. 
 Accords discrets, décisions stratégiques, équilibres fragiles. Selena ne cherche pas à être connue — elle préfère être indispensable.
 </p>
-</div>
 
-<div class="section">
 <h2>Un lien caché</h2>
 <p>
 Même les esprits les plus structurés nécessitent des espaces de rupture. 
@@ -271,10 +190,28 @@ Il représente tout ce qu’elle encadre, tout ce qu’elle contient dans son m�
 Elle aurait dû s’en détourner. Mais pour la première fois, elle ne choisit ni la logique, ni la stratégie.<br>
 Elle le choisit lui. Depuis 2011, ce lien persiste.
 </p>
+
+</div>
+
+<div class="right">
+
+<div class="profile-card">
+<img src="selena.png">
+<h3>Selena Cazares</h3>
+<p><strong>Naissance :</strong> 11 Novembre 1990</p>
+<p><strong>Lieu :</strong> Bogotá, Colombie</p>
+<p><strong>Profession :</strong> Agent SAS</p>
+</div>
+
+<div class="stamp">CONFIDENTIEL</div>
+
+</div>
+
 </div>
 
 <footer class="signature">
-Selena Cazares ® — Tous droits réservés
+Selena Cazares ® - 
+Tous droits réservés
 </footer>
 
 </div>
