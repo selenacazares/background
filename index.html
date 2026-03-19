@@ -115,6 +115,7 @@ h1 {
     padding: 15px;
     text-align: center;
     box-shadow: 0 0 20px rgba(139,0,0,0.2);
+    <div class="stamp">CONFIDENTIEL</div>
 }
 
 .profile-card img {
@@ -137,6 +138,36 @@ h1 {
     color: #aaa;
 }
 
+.stamp {
+    position: absolute;
+    top: 280px; /* ajuste si besoin */
+    right: 40px;
+
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    color: rgba(139,0,0,0.15);
+
+    transform: rotate(-15deg);
+
+    border: 2px solid rgba(139,0,0,0.2);
+    padding: 10px 20px;
+
+    text-transform: uppercase;
+
+    /* effet gravé / tampon */
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.05),
+        0 -1px 2px rgba(0,0,0,0.8);
+
+    box-shadow:
+        inset 0 2px 6px rgba(139,0,0,0.15),
+        inset 0 -2px 6px rgba(0,0,0,0.8);
+
+    pointer-events: none;
+}
+    
 /* TITRES ANIMÉS */
 h2 {
     color: #8b0000;
