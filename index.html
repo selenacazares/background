@@ -10,7 +10,6 @@ body {
     background: #0a0a0a;
     font-family: "Georgia", serif;
     color: #eaeaea;
-    overflow-x: hidden;
 }
 
 /* INTRO */
@@ -28,7 +27,7 @@ body {
 }
 
 .intro-text {
-    color: #c9a96e;
+    color: #8b0000;
     font-size: 22px;
     letter-spacing: 3px;
     animation: flicker 1.5s infinite;
@@ -54,27 +53,27 @@ body {
     position: relative;
 }
 
-/* TITRE FIX */
+/* TITRE DE BASE*/
 h1 {
     text-align: left;
     letter-spacing: 4px;
     margin-right: 320px;
-    border-bottom: 1px solid rgba(201,169,110,0.3);
+    border-bottom: 1px solid rgba(139,0,0,0.4);
     padding-bottom: 10px;
 }
 
-/* PROFIL */
+/* PROFIL CARD COTE DROIT*/
 .profile-card {
     position: absolute;
     top: 50px;
     right: 50px;
     width: 260px;
     background: rgba(5,5,5,0.95);
-    border: 1px solid #c9a96e;
+    border: 1px solid #8b0000;
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 0 20px rgba(201,169,110,0.15);
+    box-shadow: 0 0 20px rgba(139,0,0,0.2);
 }
 
 .profile-card img {
@@ -84,10 +83,9 @@ h1 {
     opacity: 0.9;
 }
 
-/* INFOS */
 .profile-card h3 {
     margin: 5px 0;
-    color: #c9a96e;
+    color: #8b0000;
 }
 
 .profile-card p {
@@ -103,45 +101,40 @@ h1 {
     color: #aaa;
 }
 
-.section {
+/* TITRES ANIMÉS */
+h2 {
+    color: #8b0000;
+    border-left: 3px solid #8b0000;
+    padding-left: 10px;
+
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease forwards;
 }
 
-.section:nth-child(1) { animation-delay: 0.3s; }
-.section:nth-child(2) { animation-delay: 0.6s; }
-.section:nth-child(3) { animation-delay: 0.9s; }
-.section:nth-child(4) { animation-delay: 1.2s; }
-.section:nth-child(5) { animation-delay: 1.5s; }
-.section:nth-child(6) { animation-delay: 1.8s; }
+/* DÉCALAGE TIMING APPARITION*/
+.section:nth-of-type(1) h2 { animation-delay: 0.3s; }
+.section:nth-of-type(2) h2 { animation-delay: 0.6s; }
+.section:nth-of-type(3) h2 { animation-delay: 0.9s; }
+.section:nth-of-type(4) h2 { animation-delay: 1.2s; }
+.section:nth-of-type(5) h2 { animation-delay: 1.5s; }
+.section:nth-of-type(6) h2 { animation-delay: 1.8s; }
 
-@keyframes fadeInUp {
+@keyframes slideInLeft {
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* TITRES */
-h2 {
-    color: #c9a96e;
-    border-left: 3px solid #c9a96e;
-    padding-left: 10px;
 }
 
 /* TEXTE */
 p {
     max-width: 650px;
     line-height: 1.8;
+    margin-top: 10px;
 }
 
-/* SCAN EFFECT */
+/* SCAN EFFET */
 .scanline {
     position: fixed;
     width: 100%;
@@ -176,68 +169,91 @@ p {
 
 <div class="container">
 
-<!-- PROFIL -->
 <div class="profile-card">
     <img src="selena.png" alt="Selena">
     <h3>Selena Cazares</h3>
     <p><strong>Naissance :</strong> 11 Nov 1990</p>
-    <p><strong>Lieu :</strong> Bogotá</p>
-    <p><strong>Profession :</strong> Avocate</p>
+    <p><strong>Lieu :</strong> Bogotá, Colombie</p>
+    <p><strong>Profession :</strong> Agent SAS</p>
 
     <div class="profile-desc">
-        Discrète. Stratégique. Intouchable.<br>
-        Elle ne subit jamais le système.<br>
-        Elle le redéfinit.
+        Discrète. Stratégique. <br>
     </div>
 </div>
 
-<h1>Dossier — Selena Cazares</h1>
+<h1>Dossier — Selena Cazares 
+Agent SC-111999</h1>
 
 <div class="section">
 <h2>Origines</h2>
 <p>
-Née à Bogotá, Selena évolue dans un environnement où le pouvoir ne s’expose jamais.
-Très tôt, elle comprend que tout repose sur le contrôle et la discrétion.
+Née à Bogotá, Selena Cazares grandit dans un environnement où le pouvoir ne s’expose jamais.
+Une famille discrète, influente, où les décisions se prennent dans le silence.
+Très tôt, elle comprend que ce qui est visible n’est qu’une façade.
 </p>
 </div>
 
 <div class="section">
 <h2>Formation</h2>
 <p>
-Éducation stricte, discipline constante, maîtrise des comportements.
-Le droit devient un levier stratégique.
+Éducation stricte, discipline constante, maîtrise des codes sociaux et de l’analyse comportementale.
+Selena apprend à observer avant d’agir, à comprendre avant de parler.
+Le droit devient un outil. Jamais une limite.
 </p>
 </div>
 
 <div class="section">
 <h2>Construction</h2>
 <p>
-Elle construit seule son cabinet et attire une clientèle exigeante.
+Elle refuse de dépendre de son nom.
+Seule, elle construit son propre cabinet et attire une clientèle exigeante, confrontée à des situations sensibles.
 Elle ne défend pas — elle restructure.
+Elle ne réagit pas — elle anticipe.
 </p>
 </div>
 
 <div class="section">
 <h2>Influence</h2>
 <p>
-Son nom circule dans des cercles fermés.
-Elle agit là où les enjeux dépassent le visible.
+Son nom circule sans jamais s’exposer.
+Elle intervient là où les enjeux dépassent les apparences.
+Accords discrets, décisions stratégiques, équilibres fragiles.
+Selena ne cherche pas à être connue — elle préfère être indispensable.
+</p>
+</div>
+
+<div class="section">
+<h2>Échappées</h2>
+<p>
+Par moments, elle disparaît.
+Non pas pour fuir, mais pour maintenir le contrôle.
+Ces instants, rares, lui permettent de garder une distance nécessaire avec le monde qu’elle manipule.
 </p>
 </div>
 
 <div class="section">
 <h2>Lien</h2>
 <p>
-Elle a choisi de s’attacher à un monde qu’elle encadre habituellement.
-Une décision assumée.
+Il représentait tout ce qu’elle encadre dans son métier.
+Un univers qu’elle comprend, mais qu’elle garde habituellement sous contrôle.
+</p>
+<p>
+Elle aurait dû s’en détourner.
+Mais elle a choisi de s’y attacher.
+</p>
+<p>
+Depuis 2011, ce lien perdure.
+Stable. Silencieux. Inattendu.
+Une exception qu’elle ne justifie pas — mais qu’elle ne remet jamais en question.
 </p>
 </div>
 
 <div class="section">
 <h2>Présence</h2>
 <p>
-Elle n’a pas besoin d’être visible pour exister.
-Tout est déjà en mouvement lorsqu’elle intervient.
+Selena Cazares n’a pas besoin d’être visible pour exister.
+Chaque intervention est mesurée.
+Chaque décision a déjà été pensée.
 </p>
 </div>
 
@@ -246,24 +262,6 @@ Tout est déjà en mouvement lorsqu’elle intervient.
 </div>
 
 </div>
-
-<script>
-const sections = document.querySelectorAll('.section');
-
-function reveal() {
-    sections.forEach(section => {
-        const position = section.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-
-        if(position < screen - 50){
-            section.classList.add('visible');
-        }
-    });
-}
-
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
-</script>
 
 </body>
 </html>
