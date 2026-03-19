@@ -56,7 +56,7 @@ body {
     position: relative;
 }
 
-/* TITRE + GLITCH */
+/* TITRE */
 h1 {
     text-align: left;
     margin-right: 320px;
@@ -65,6 +65,7 @@ h1 {
     letter-spacing: 4px;
 }
 
+/* GLITCH */
 .glitch {
     position: relative;
 }
@@ -135,33 +136,19 @@ h1 {
     color: #aaa;
 }
 
-/* 🔴 TAMPON CONFIDENTIEL */
+/* TAMPON */
 .stamp {
     position: absolute;
     top: 300px;
     right: 20px;
-
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 4px;
-
     color: rgba(139,0,0,0.12);
-
     transform: rotate(-15deg);
-
     border: 2px solid rgba(139,0,0,0.2);
     padding: 12px 25px;
-
     text-transform: uppercase;
-
-    text-shadow:
-        0 1px 0 rgba(255,255,255,0.05),
-        0 -1px 2px rgba(0,0,0,0.8);
-
-    box-shadow:
-        inset 0 2px 6px rgba(139,0,0,0.15),
-        inset 0 -2px 6px rgba(0,0,0,0.8);
-
     pointer-events: none;
     z-index: 1;
 }
@@ -171,23 +158,6 @@ h2 {
     color: #8b0000;
     border-left: 3px solid #8b0000;
     padding-left: 10px;
-
-    opacity: 0;
-    transform: translateX(-60px);
-    animation: slideInLeft 0.9s ease forwards;
-}
-
-/* DELAYS */
-.section:nth-of-type(1) h2 { animation-delay: 2.5s; }
-.section:nth-of-type(2) h2 { animation-delay: 3.2s; }
-.section:nth-of-type(3) h2 { animation-delay: 3.9s; }
-.section:nth-of-type(4) h2 { animation-delay: 4.6s; }
-
-@keyframes slideInLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 /* TEXTE */
@@ -203,18 +173,8 @@ p {
     text-align: center;
     font-size: 14px;
     letter-spacing: 1.5px;
-
     color: #8b0000;
-
     border-top: 1px solid rgba(139,0,0,0.3);
-
-    text-shadow:
-        0 1px 0 rgba(255,255,255,0.1),
-        0 -2px 3px rgba(0,0,0,0.9);
-
-    box-shadow:
-        inset 0 2px 8px rgba(139,0,0,0.15),
-        inset 0 -2px 8px rgba(0,0,0,0.9);
 }
 </style>
 </head>
@@ -233,13 +193,8 @@ p {
     <p><strong>Naissance :</strong> 11 Novembre 1990</p>
     <p><strong>Lieu :</strong> Bogotá, Colombie</p>
     <p><strong>Profession :</strong> Agent SAS</p>
-
-    <div class="profile-desc">
-        Discrète. Stratégique.
-    </div>
 </div>
 
-<!-- ✅ TAMPON BIEN PLACÉ -->
 <div class="stamp">CONFIDENTIEL</div>
 
 <h1 class="glitch" data-text="Dossier — Selena Cazares">
@@ -248,7 +203,41 @@ Dossier — Selena Cazares
 
 <div class="section">
 <h2>Ses origines</h2>
-<p>...</p>
+<p>
+Née à Bogotá, Selena Cazares grandit au sein d’une famille dont l’influence repose sur une règle simple : ne jamais être exposée. 
+Les Cazares ne cherchent pas la lumière, ils agissent là où les décisions se prennent sans témoins. 
+Très tôt, Selena comprend que le pouvoir ne réside pas dans ce qui est visible, mais dans ce qui est maîtrisé. 
+Elle observe, assimile, et apprend à ne jamais réagir sans avoir déjà envisagé toutes les issues possibles.
+</p>
+</div>
+
+<div class="section">
+<h2>Son éducation</h2>
+<p>
+Son éducation est rigoureuse, presque militaire. Pension internationale, formation à la diplomatie, maîtrise de la diction et de l’analyse comportementale. 
+Elle apprend à lire les silences autant que les mots. À anticiper les réactions avant qu’elles ne naissent. 
+Le droit ne devient pas une vocation, il devient un outil. Un cadre qu’elle comprend suffisamment pour ne jamais y être enfermée.
+</p>
+</div>
+
+<div class="section">
+<h2>La construction de son expérience</h2>
+<p>
+Elle refuse de dépendre de son nom. Seule, elle construit son propre cabinet et attire une clientèle exigeante, confrontée à des situations sensibles. 
+Son nom circule sans jamais s’exposer. Elle intervient là où les enjeux dépassent les apparences. 
+Accords discrets, décisions stratégiques, équilibres fragiles. Selena ne cherche pas à être connue — elle préfère être indispensable.
+</p>
+</div>
+
+<div class="section">
+<h2>Un lien caché</h2>
+<p>
+Même les esprits les plus structurés nécessitent des espaces de rupture. 
+Selena disparaît parfois, sans prévenir, pour maintenir la distance nécessaire entre elle et le monde qu’elle influence. 
+Il représente tout ce qu’elle encadre, tout ce qu’elle contient dans son métier. 
+Elle aurait dû s’en détourner. Mais pour la première fois, elle ne choisit ni la logique, ni la stratégie.<br>
+Elle le choisit lui. Depuis 2011, ce lien persiste.
+</p>
 </div>
 
 <footer class="signature">
