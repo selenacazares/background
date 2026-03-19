@@ -10,20 +10,26 @@ body {
     background: #0a0a0a;
     font-family: "Georgia", serif;
     color: #eaeaea;
+    overflow: hidden;
 }
 
 /* INTRO */
 .intro {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: black;
+
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
-    animation: fadeOut 2s ease forwards;
-    animation-delay: 2s;
+
+    z-index: 9999;
+
+    animation: fadeOut 1.5s ease forwards;
+    animation-delay: 1.5s;
 }
 
 .intro-text {
@@ -34,7 +40,10 @@ body {
 }
 
 @keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 @keyframes flicker {
@@ -244,5 +253,11 @@ Classified Files : Selena Cazares ® — Tous droits réservés
 </footer>
 </div>
 
+    <script>
+setTimeout(() => {
+    document.body.style.overflow = "auto";
+}, 1600);
+</script>
+    
 </body>
 </html>
