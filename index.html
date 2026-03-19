@@ -221,7 +221,51 @@ p {
     color: #e0c48f;
     transition: 0.3s;
 }
-    
+
+    .glitch {
+    position: relative;
+    color: #eaeaea;
+}
+
+/* couches glitch */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0.3;
+}
+
+.glitch::before {
+    color: #8b0000;
+    animation: glitchTop 3s infinite;
+}
+
+.glitch::after {
+    color: #ff0000;
+    animation: glitchBottom 3s infinite;
+}
+
+/* animations */
+@keyframes glitchTop {
+    0% { clip-path: inset(0 0 90% 0); transform: translate(-2px, -2px); }
+    20% { clip-path: inset(10% 0 70% 0); transform: translate(2px, 1px); }
+    40% { clip-path: inset(20% 0 50% 0); transform: translate(-1px, 2px); }
+    60% { clip-path: inset(30% 0 40% 0); transform: translate(1px, -1px); }
+    80% { clip-path: inset(40% 0 20% 0); transform: translate(-2px, 0); }
+    100% { clip-path: inset(0 0 90% 0); transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+    0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
+    20% { clip-path: inset(60% 0 10% 0); transform: translate(-1px, -2px); }
+    40% { clip-path: inset(50% 0 20% 0); transform: translate(1px, 1px); }
+    60% { clip-path: inset(40% 0 30% 0); transform: translate(-2px, 0); }
+    80% { clip-path: inset(20% 0 40% 0); transform: translate(2px, -1px); }
+    100% { clip-path: inset(80% 0 0 0); transform: translate(0); }
+}
 </style>
 </head>
 
@@ -247,7 +291,9 @@ p {
     </div>
 </div>
 
-<h1>Dossier — Selena Cazares </h1>
+<h1 class="glitch" data-text="Dossier — Selena Cazares">
+    Dossier — Selena Cazares
+</h1>
 
 <div class="section">
 <h2>Ses origines</h2>
