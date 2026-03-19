@@ -2,83 +2,82 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Selena Cazares</title>
+<title>Dossier — Selena Cazares</title>
 
 <style>
 body {
     margin: 0;
     padding: 0;
-    background-color: #0d0d0d;
+    background: #0a0a0a;
     font-family: "Georgia", serif;
     color: #eaeaea;
-    overflow-x: hidden;
 }
 
+/* CONTENEUR */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 60px auto;
-    padding: 40px;
-    background: rgba(20, 20, 20, 0.95);
+    padding: 50px;
+    background: rgba(15,15,15,0.95);
     border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    box-shadow: 0 0 40px rgba(0,0,0,0.9);
+    position: relative;
 }
 
-/* TITRE GLITCH */
+/* TITRE */
 h1 {
     text-align: center;
     font-size: 36px;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    position: relative;
-    color: #eaeaea;
-    animation: flicker 3s infinite;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
 }
 
-h1::before,
-h1::after {
-    content: "Selena Cazares";
+/* PROFIL */
+.profile-card {
     position: absolute;
-    left: 0;
+    top: 50px;
+    right: 50px;
+    width: 260px;
+    background: rgba(5,5,5,0.95);
+    border: 1px solid #c9a96e;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(201,169,110,0.15);
+}
+
+/* IMAGE + EFFET */
+.profile-card img {
     width: 100%;
-    opacity: 0.2;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    filter: grayscale(100%) contrast(120%);
+    opacity: 0.9;
+    animation: flicker 4s infinite;
 }
 
-h1::before {
-    color: #00fff7;
-    animation: glitchLeft 2s infinite;
+/* INFOS */
+.profile-card h3 {
+    margin: 5px 0;
+    color: #c9a96e;
 }
 
-h1::after {
-    color: #ff003c;
-    animation: glitchRight 2s infinite;
+.profile-card p {
+    font-size: 13px;
+    margin: 3px 0;
+    color: #bbb;
 }
 
-@keyframes glitchLeft {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 1px); }
-    40% { transform: translate(-1px, -1px); }
-    60% { transform: translate(-3px, 1px); }
-    80% { transform: translate(1px, -1px); }
-    100% { transform: translate(0); }
+.profile-desc {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 13px;
+    color: #aaa;
 }
 
-@keyframes glitchRight {
-    0% { transform: translate(0); }
-    20% { transform: translate(2px, -1px); }
-    40% { transform: translate(1px, 1px); }
-    60% { transform: translate(3px, -1px); }
-    80% { transform: translate(-1px, 1px); }
-    100% { transform: translate(0); }
-}
-
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.85; }
-}
-
-/* ANIMATION TITRES */
+/* TITRES */
 h2 {
-    margin-top: 30px;
+    margin-top: 35px;
     font-size: 20px;
     color: #c9a96e;
     border-left: 3px solid #c9a96e;
@@ -104,24 +103,26 @@ h2:nth-of-type(7) { animation-delay: 1.4s; }
     }
 }
 
+@keyframes flicker {
+    0%,100% {opacity: 0.9;}
+    50% {opacity: 0.75;}
+}
+
+/* TEXTE */
 p {
     line-height: 1.8;
     margin-top: 10px;
     color: #d6d6d6;
+    max-width: 650px;
 }
 
+/* QUOTE */
 .quote {
-    margin-top: 20px;
+    margin-top: 40px;
     font-style: italic;
     text-align: center;
-    color: #aaa;
-}
-
-footer {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 12px;
-    color: #666;
+    color: #888;
+    letter-spacing: 1px;
 }
 </style>
 </head>
@@ -130,59 +131,85 @@ footer {
 
 <div class="container">
 
-<h1>Selena Cazares</h1>
+<!-- PROFIL -->
+<div class="profile-card">
+    <img src="selena.png" alt="Selena">
+    <h3>Selena Cazares</h3>
+    <p><strong>Naissance :</strong> 11 Nov 1990</p>
+    <p><strong>Lieu :</strong> Bogotá, Colombie</p>
+    <p><strong>Profession :</strong> Avocate</p>
+
+    <div class="profile-desc">
+        Discrète. Stratégique. Intouchable.<br>
+        Elle ne subit jamais le système.<br>
+        Elle le redéfinit.
+    </div>
+</div>
+
+<h1>Dossier — Selena Cazares</h1>
 
 <h2>Origines</h2>
 <p>
-Née à Bogotá, Selena Cazares grandit dans un environnement maîtrisé, discret et influent.
-Très tôt, elle comprend que le pouvoir ne se montre pas — il se contrôle.
+Née à Bogotá, Selena Cazares évolue dans un environnement où le pouvoir ne s’expose jamais.
+Une famille discrète, influente, où les décisions se prennent dans le silence.
+Très tôt, elle comprend que ce qui est visible n’est qu’une façade.
 </p>
 
 <h2>Formation</h2>
 <p>
-Éducation stricte, analyse constante, maîtrise du silence.
-Le droit devient un outil, jamais une limite.
+Éducation stricte, discipline constante, maîtrise des codes sociaux et de l’analyse comportementale.
+Selena apprend à observer avant d’agir, à comprendre avant de parler.
+Le droit devient un outil. Jamais une limite.
 </p>
 
 <h2>Construction</h2>
 <p>
-Elle fonde seule son cabinet et attire une clientèle exigeante.
-Elle ne défend pas seulement — elle structure, anticipe et protège.
+Elle refuse de dépendre de son nom.
+Seule, elle construit son propre cabinet et attire une clientèle exigeante, confrontée à des situations sensibles.
+Elle ne défend pas — elle restructure.
+Elle ne réagit pas — elle anticipe.
 </p>
 
-<h2>Méthode</h2>
+<h2>Influence</h2>
 <p>
-Chaque mot est pesé. Chaque décision calculée.
-Selena n’agit jamais sans avoir déjà prévu l’issue.
+Son nom circule sans jamais s’exposer.
+Elle intervient là où les enjeux dépassent les apparences.
+Accords discrets, décisions stratégiques, équilibres fragiles.
+Selena ne cherche pas à être connue — elle préfère être indispensable.
 </p>
 
 <h2>Échappées</h2>
 <p>
-Par moments, elle disparaît pour respirer.
-C’est dans ces instants qu’elle a croisé un monde opposé au sien.
+Par moments, elle disparaît.
+Non pas pour fuir, mais pour maintenir le contrôle.
+Ces instants, rares, lui permettent de garder une distance nécessaire avec le monde qu’elle manipule.
 </p>
 
 <h2>Lien</h2>
 <p>
 Il représentait tout ce qu’elle encadre dans son métier.
+Un univers qu’elle comprend, mais qu’elle garde habituellement sous contrôle.
+</p>
+<p>
 Elle aurait dû s’en détourner.
 Mais elle a choisi de s’y attacher.
-Par amour.
+</p>
+<p>
+Depuis 2011, ce lien perdure.
+Stable. Silencieux. Inattendu.
+Une exception qu’elle ne justifie pas — mais qu’elle ne remet jamais en question.
 </p>
 
 <h2>Présence</h2>
 <p>
-Elle n’a pas besoin d’être vue pour exister.
-Si elle intervient, c’est que tout est déjà en mouvement.
+Selena Cazares n’a pas besoin d’être visible pour exister.
+Chaque intervention est mesurée.
+Chaque décision a déjà été pensée.
 </p>
 
 <div class="quote">
 “Ce qui est visible n’est jamais l’essentiel.”
 </div>
-
-<footer>
-© Selena Cazares
-</footer>
 
 </div>
 
