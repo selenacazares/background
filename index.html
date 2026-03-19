@@ -237,16 +237,19 @@ Tout est déjà en mouvement lorsqu’elle intervient.
 <script>
 const sections = document.querySelectorAll('.section');
 
-window.addEventListener('scroll', () => {
+function reveal() {
     sections.forEach(section => {
         const position = section.getBoundingClientRect().top;
         const screen = window.innerHeight;
 
-        if(position < screen - 100){
+        if(position < screen - 50){
             section.classList.add('visible');
         }
     });
-});
+}
+
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
 </script>
 
 </body>
