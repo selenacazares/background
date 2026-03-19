@@ -119,15 +119,17 @@ h2 {
     opacity: 0;
     transform: translateX(-50px);
     animation: slideInLeft 0.8s ease forwards;
+
+    animation-delay: 2s; /* ⬅️ délai global */
 }
 
 /* DÉCALAGE TIMING APPARITION*/
-.section:nth-of-type(1) h2 { animation-delay: 0.3s; }
-.section:nth-of-type(2) h2 { animation-delay: 0.6s; }
-.section:nth-of-type(3) h2 { animation-delay: 0.9s; }
-.section:nth-of-type(4) h2 { animation-delay: 1.2s; }
-.section:nth-of-type(5) h2 { animation-delay: 1.5s; }
-.section:nth-of-type(6) h2 { animation-delay: 1.8s; }
+.section:nth-of-type(1) h2 { animation-delay: 2.2s; }
+.section:nth-of-type(2) h2 { animation-delay: 2.5s; }
+.section:nth-of-type(3) h2 { animation-delay: 2.8s; }
+.section:nth-of-type(4) h2 { animation-delay: 3.1s; }
+.section:nth-of-type(5) h2 { animation-delay: 3.4s; }
+.section:nth-of-type(6) h2 { animation-delay: 3.7s; }
 
 @keyframes slideInLeft {
     to {
@@ -274,7 +276,7 @@ Une exception qu’elle ne justifie pas, un homme.
 </div>
 
 
-    /* PIED DE PAGE */
+
 <footer class="Signature">
 Classified Files : Selena Cazares ® — Tous droits réservés 
 </footer>
